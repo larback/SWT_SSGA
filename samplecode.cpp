@@ -66,7 +66,15 @@ int main(int argc, char* argv[]) {
 
 	double best = 9e18;
 	double initialBest = -1;
-
+	// gero o arquivo de saída para garantir que o runner encontre em uma possível nova execução
+	std::ofstream fileLock(argv[1]);
+	if (!fileLock.is_open()){
+		std::cerr << "Erro ao gerar o arquivo de saída previamente." << std::endl;
+		return 1;
+	}
+	fileLock << "";
+	fileLock.close();
+	
 	high_resolution_clock::time_point t1 = high_resolution_clock::now();
 
 	unsigned RNG_SEED = static_cast<unsigned>(

@@ -72,23 +72,21 @@ int main(int argc, char* argv[]) {
 	}
 	while ((entrada = readdir (dir))){
 		if (entrada->d_type == isFile){
-			std::string xF = nomeDir + "solucoes/GA_SOLUCAO_"+entrada->d_name + "_10";
-			const char * x = xF.c_str();
-			FILE *TFile;
 			for (int i=1;i<=repeticoes;++i) {
 				std::stringstream convert;
 				std::cout << i << " Execucao: " << nomeDir+entrada->d_name << std::endl;
 				convert << i;
-				std::string xF = nomeDir + "solucoes/GA_SOLUCAO_"+entrada->d_name +  "_" + convert.str();
-				x = xF.c_str();
-				std::ifstream existeInstancia;
-				existeInstancia.open(xF);
 				std::string outFile = nomeDir + "solucoes/GA_SOLUCAO_"+entrada->d_name + "_" + convert.str();
+				struct stat st_out;
+				if (stat(outFile.c_str(), &st_out) == 0){
+					std::cout << "This running is done. Skipping to next run." << std::endl;
+					continue;
+				}
 				std::string cmd = "./samplecode " + outFile + " <" + nomeDir + entrada->d_name;
 				std::cout << "Running: " << cmd << std::endl;
 				int s = system(cmd.c_str());
 				std::cout << "Return code: " << s << " for output file: " << outFile << std::endl;
-				struct stat st_out;
+				
 				if (stat(outFile.c_str(), &st_out) == 0){
 					std::cout << "Output created: " << outFile << " (size=" << st_out.st_size << ")" << std::endl;
 				} else {

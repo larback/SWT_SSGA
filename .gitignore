@@ -1,0 +1,22 @@
+# Executáveis (Binários do Mac/Linux)
+runner
+samplecode
+SampleDecoder
+KTNS
+SSGA
+
+# Arquivos de saída e experimentos
+solucoes/
+GA_RESUMO.txt
+
+# Objetos de compilação (caso o compilador gere .o intermediários)
+*.o
+*.obj
+
+# Arquivos de sistema e IDE
+.DS_Store
+.vscode/
+
+# Backup de editores
+*.swp
+*~
