@@ -1,0 +1,9 @@
+### Parameter file for SSGA
+# name			switch		type	values			[conditions (using R syntax)]
+population_size 	"--p "     	c  	(3, 6, 10, 15)
+mutant_fraction 	"--pm "         c  	(0.01, 0.03, 0.05, 0.10, 0.15, 0.20)
+search_fraction		"--ps "       	c	(0.01, 0.03, 0.05, 0.10, 0.15, 0.20, 0.30, 0.50)
+two_swap_switch		"--ts "		i	(0, 1)
+two_opt_switch		"--tp "		i	(0, 1)
+insertion_switch	"--is "		i	(0, 1)
+iterations_void		"--iv "		c	(1000, 2000, 3000, 5000, 10000) 

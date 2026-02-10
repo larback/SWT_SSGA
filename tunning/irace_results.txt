@@ -1,0 +1,23 @@
+Best-so-far configuration:         686    mean value:      633.7500000
+Description of the best-so-far configuration:
+    .ID. population_size mutant_fraction search_fraction two_swap_switch two_opt_switch insertion_switch iterations_void .PARENT.
+686  686              15            0.03            0.30               0              0                0           10000      657
+
+# 2026-02-09 18:10:47 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    population_size mutant_fraction search_fraction two_swap_switch two_opt_switch insertion_switch iterations_void
+686              15            0.03            0.30               0              0                0           10000
+694              15            0.03            0.10               0              0                0           10000
+614              15            0.03            0.50               0              0                0           10000
+697              15            0.03            0.03               0              0                0           10000
+# Total CPU user time: 7157510, CPU sys time: 118.213, Wall-clock time: 884331.3
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    population_size mutant_fraction search_fraction two_swap_switch two_opt_switch insertion_switch iterations_void
+686              15            0.03            0.30               0              0                0           10000
+694              15            0.03            0.10               0              0                0           10000
+614              15            0.03            0.50               0              0                0           10000
+697              15            0.03            0.03               0              0                0           10000
+# Best configurations as commandlines (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+686 --p 15 --pm 0.03 --ps 0.30 --ts 0 --tp 0 --is 0 --iv 10000
+694 --p 15 --pm 0.03 --ps 0.10 --ts 0 --tp 0 --is 0 --iv 10000
+614 --p 15 --pm 0.03 --ps 0.50 --ts 0 --tp 0 --is 0 --iv 10000
+697 --p 15 --pm 0.03 --ps 0.03 --ts 0 --tp 0 --is 0 --iv 10000

@@ -18,15 +18,15 @@ vector<unsigned> executionTime;
 vector<unsigned> toolLife;
 
 // ---------------- Parâmetros do iRace ----------------
-unsigned POP_SIZE = 6; // p
-const unsigned MAX_VOID = 200000; // iterações sem melhoria
+unsigned POP_SIZE = 15; // p
+const unsigned MAX_VOID = 10000; // iterações sem melhoria
 const unsigned CHILDREN_PER_ITER = 2; // filhos por iteração (2 filhos do mesmo crossover)
 const unsigned TOURNAMENT_K = 2; // torneio
-const double MUT_GENE_PROB = 0.05; // 0,1% por gene (swap)
-const double INTENS_PROB = 0.05; // taxa de intensificação (busca local)
-bool TWO_SWAP = true; // swap2
-bool INSERTION = true; // insertion
-bool TWO_OPT = true; // opt2
+const double MUT_GENE_PROB = 0.03; // 0,1% por gene (swap)
+const double INTENS_PROB = 0.30; // taxa de intensificação (busca local)
+bool TWO_SWAP = false; // swap2
+bool INSERTION = false; // insertion
+bool TWO_OPT = false; // opt2
 
 unsigned generation = 0;
 
