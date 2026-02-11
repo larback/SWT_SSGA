@@ -24,9 +24,9 @@ const unsigned CHILDREN_PER_ITER = 2; // filhos por iteração (2 filhos do mesm
 const unsigned TOURNAMENT_K = 2; // torneio
 const double MUT_GENE_PROB = 0.03; // 0,1% por gene (swap)
 const double INTENS_PROB = 0.30; // taxa de intensificação (busca local)
-bool TWO_SWAP = false; // swap2
-bool INSERTION = false; // insertion
-bool TWO_OPT = false; // opt2
+bool TWO_SWAP = true; // swap2
+bool INSERTION = true; // insertion
+bool TWO_OPT = true; // opt2
 
 unsigned generation = 0;
 

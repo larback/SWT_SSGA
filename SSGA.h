@@ -325,24 +325,24 @@ private:
 		shuffle(order.begin(), order.end(), rng);
 
 		bool melhorou = true;
-		while (melhorou) {
-			if (timeExceeded()) break;
+		// while (melhorou) {
+			if (timeExceeded()) return r0 - resultadoAtual;
 			melhorou = false;
 
 			for (unsigned i = 0; i + 1 < n && !melhorou; ++i) {
 				for (unsigned j = i + 1; j < n; ++j) {
-					if (timeExceeded()) break;
+					if (timeExceeded()) return r0 - resultadoAtual;
 					trocar(solucaoAtual, order[i], order[j]);
 					resultadoNovo = decoder.decode(solucaoAtual);
 					if (resultadoNovo < resultadoAtual) {
 						resultadoAtual = resultadoNovo;
-						melhorou = true;
-						break;
+						// melhorou = true;
+						return r0 - resultadoAtual;
 					}
 					trocar(solucaoAtual, order[i], order[j]);
 				}
 			}
-		}
+		//}
 
 		processos = solucaoAtual;
 		return r0 - resultadoAtual;
@@ -364,24 +364,25 @@ private:
 		shuffle(order.begin(), order.end(), rng);
 
 		bool melhorou = true;
-		while (melhorou) {
-			if (timeExceeded()) break;
+		// while (melhorou) {
+			if (timeExceeded()) return r0 - resultadoAtual;
 			melhorou = false;
 
 			for (unsigned i = 0; i + 1 < n && !melhorou; ++i) {
 				for (unsigned j = i + 1; j < n; ++j) {
-					if (timeExceeded()) break;
+					if (timeExceeded()) return r0 - resultadoAtual;
 					trocar2(solucaoAtual, order[i], order[j]);
 					resultadoNovo = decoder.decode(solucaoAtual);
 					if (resultadoNovo < resultadoAtual) {
 						resultadoAtual = resultadoNovo;
-						melhorou = true;
-						break;
+						// melhorou = true;
+						// break;
+						return r0 - resultadoAtual;
 					}
 					trocar2(solucaoAtual, order[i], order[j]);
 				}
 			}
-		}
+		//}
 
 		processos = solucaoAtual;
 		return r0 - resultadoAtual;
@@ -404,14 +405,14 @@ private:
 
 		bool melhorou = true;
 
-		while (melhorou) {
-			if (timeExceeded()) break;
+		//while (melhorou) {
+			if (timeExceeded()) return r0 - resultadoAtual;
 
 			melhorou = false;
 
 			for (unsigned i = 0; i < n && !melhorou; ++i) {
 				for (unsigned j = i + 1; j < n; ++j) {
-					if (timeExceeded()) break;
+					if (timeExceeded()) return r0 - resultadoAtual;
 					if (order[i] == order[j]) continue;
 					double val = solucaoAtual[order[i]];
 					if (order[i] < order[j]) {
@@ -430,8 +431,9 @@ private:
 
 					if (resultadoNovo < resultadoAtual) {
 						resultadoAtual = resultadoNovo;
-						melhorou = true;
-						break;
+						//melhorou = true;
+						//break;
+						return r0 - resultadoAtual;
 					}
 
 					if (order[i] < order[j]) {
@@ -449,7 +451,7 @@ private:
 					}
 				}
 			}
-		}
+		//}
 
 		processos = solucaoAtual;
 		return r0 - resultadoAtual;
